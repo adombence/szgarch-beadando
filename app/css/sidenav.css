@@ -2,7 +2,7 @@ body {
     display: grid;
     grid: [stack] 1fr / min-content [stack] 1fr;
 
-    @media (max-width: 540px) {
+    @media (max-width: 1200px) {
         & > :matches(aside, main) {
             grid-area: stack;
         }
@@ -16,14 +16,13 @@ body {
     display: grid;
     grid-template-columns: [nav] 2fr [escape] 1fr;
 
-    @media (max-width: 540px) {
+    @media (max-width: 1200px) {
         position: sticky;
         top: 0;
         max-height: 100vh;
         overflow: hidden auto;
         overscroll-behavior: contain;
-
-        visibility: hidden; /* not keyboard accessible when closed */
+        visibility: hidden;
         transform: translateX(-110vw);
         will-change: transform;
         transition: transform var(--duration) var(--easeOutExpo),
@@ -48,7 +47,7 @@ body {
     user-select: none;
     touch-action: manipulation;
 
-    @media (min-width: 540px) {
+    @media (min-width: 1200px) {
         display: none;
     }
 }

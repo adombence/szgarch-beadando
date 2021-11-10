@@ -128,7 +128,8 @@ article {
 
     & img {
         margin-top: 2ch;
-        max-width: 20ch;
+        max-width: var(--img-width);
+        width: 100%;
         aspect-ratio: 4 / 3;
     }
 }

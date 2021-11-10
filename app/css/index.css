@@ -8,8 +8,9 @@
     --surface2: lch(20 0 0);
     --text: lch(90 0 0);
     --text2: lch(70 0 0);
-    --textSize: 1.5rem;
+    --textSize: 1rem;
     --brandHSL: 328 100% 54%;
+    --img-width: 50ch;
 
     @media (prefers-color-scheme: light) {
         --surface: lch(90 0 0);
@@ -19,7 +20,8 @@
     }
 
     @media (max-width: 1200px) {
-        --textSize: 1.0rem;
+        --textSize: 0.75rem;
+        --img-width: 100%;
     }
 }
 
@@ -41,6 +43,15 @@ body {
 h1, h2, h3, h4, figure {
     margin: 0;
     color: var(--text);
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2ch 0;
+    max-width: 100%;
+    width: 100%;
 }
 
 h2 {
@@ -71,122 +82,23 @@ a {
 
 table {
     width: 100%;
+    display: table;
     border-collapse: collapse;
-    caption-side: bottom;
-
 }
 
+tr:nth-child(even) {
+    background-color: var(--surface);
+    color: var(--text);
 
-tr:nth-child(odd) {
-    background: #eee;
 }
 
 td, th {
-    width: 100%;
+    width: fit-content;
+    width: -moz-fit-content;
     text-align: left;
+    margin: 0;
 }
 
-th {
-//background: yellow; color: hsl(328 100% 74%); outline-color: hsl(var(--brandHSL));
-}
-
-letter-animation {
-    @media (--motionOK) {
-
-        @nest [&] > span {
-            display: inline-block;
-            white-space: break-spaces;
-        }
-
-        @nest [&="breath"] {
-            --glow-color: white;
-
-            & > span {
-                animation:
-                        breath 1200ms ease
-                        calc(var(--index) * 100 * 1ms)
-                        infinite alternate;
-            }
-
-            @media (prefers-color-scheme: light) { & {
-                --glow-color: black;
-            }}
-        }
-
-        @nest [&="hover"] {
-            &:hover > span {
-                transform: scale(.75) perspective(1px);
-            }
-
-            & > span {
-                transition: transform .3s ease;
-                cursor: pointer;
-                will-change: transform;
-
-                &:hover {
-                    transform: scale(1.25) perspective(1px);
-                }
-            }
-        }
-    }
-}
-
-word-animation {
-    @media (--motionOK) {
-
-        @nest [&] {
-            display: inline-flex;
-            flex-wrap: wrap;
-            gap: 1ch;
-        }
-
-        @nest [&="trampoline"] {
-            & > span {
-                display: inline-block;
-                transform: translateY(100%);
-                animation:
-                        trampoline 3s ease
-                        calc(var(--index) * 150 * 1ms)
-                        infinite alternate;
-            }
-        }
-
-        @nest [&="hover"] {
-            @media (hover) {
-                overflow: hidden;
-                overflow: clip;
-
-                & > span {
-                    transition: transform .3s ease;
-                    cursor: pointer;
-
-                    &:not(:hover) {
-                        transform: translateY(50%);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@keyframes breath {
-    from {
-        animation-timing-function: ease-out;
-    }
-    to {
-        transform: scale(1.25) translateY(-5px) perspective(1px);
-        text-shadow: 0 0 40px var(--glow-color);
-        animation-timing-function: ease-in-out;
-    }
-}
-
-@keyframes trampoline {
-    0% {
-        transform: translateY(100%);
-        animation-timing-function: ease-out;
-    }
-    50% {
-        transform: translateY(0);
-        animation-timing-function: ease-in;
-    }
+.mouse-mechanism {
+    max-width: 50ch;
 }
