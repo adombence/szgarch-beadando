@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Copyright (c) 2021. Ádom Bence György
+#
+
 # Set default variables
 name=$0
 version=1.0
@@ -7,8 +11,6 @@ scale_num=10
 
 # Display help
 Help() {
-	echo ""
-	echo
 	echo "Syntax: scriptTemplate [-h|v]"
 	echo "options:"
 	echo "h	Print this Help"
