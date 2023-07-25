@@ -24,7 +24,7 @@
     "concurrently": "8.2.0",
     "cssnano": "^6.0.0",
     "import-http": "^0.3.1",
-    "postcss": "8.4.26",
+    "postcss": "8.4.27",
     "postcss-cli": "10.1.0",
     "postcss-easings": "^4.0.0",
     "postcss-import": "^15.0.0",
