@@ -27,7 +27,7 @@
     "postcss": "8.4.31",
     "postcss-cli": "11.0.0",
     "postcss-easings": "^4.0.0",
-    "postcss-import": "^15.0.0",
+    "postcss-import": "^16.0.0",
     "postcss-import-url": "^7.0.0",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "9.3.0",
